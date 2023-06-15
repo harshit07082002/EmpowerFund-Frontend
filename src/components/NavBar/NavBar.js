@@ -28,7 +28,7 @@ const NavBar = (props) => {
           </NavLink>
           {!login && <Nav className="d-flex">
             <NavDropdown title="Login" id="navbarScrollingDropdown" className='comp'>
-              <NavLink to="/student/login" className={"underline"}>
+              <NavLink to="/user/login" className={"underline"}>
                 <a data-rr-ui-dropdown-item="" class="dropdown-item" role="button" tabindex="0">Student Login</a>
               </NavLink>
               <NavLink to={'/admin/login'} className="underline">

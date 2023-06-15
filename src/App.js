@@ -50,9 +50,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomePage/>} />
             <Route path="/register" element={<RegisterPage/>} />
-            <Route path="/student/login" element={<LoginPage/>} />
-            <Route path="/student/:enrollmentNo" element={<StudentDetails/>} />
-            <Route path="/job/:jobid" element={<JobDetails/>} />
+            <Route path="/user/login" element={<LoginPage/>} />
+            <Route path="/user/:email" element={<StudentDetails/>} />
             <Route path="/admin/login" element={<LoginPage/>} />
             <Route path="/about" element={<LoginPage/>} />
             {auth.isAdmin && <Route path="/register-job" element={<RegisterJob/>}/>}

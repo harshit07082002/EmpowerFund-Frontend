@@ -27,7 +27,7 @@ const PasswordValidity = (password) => {
 }
 
 
-const RegisterPage = () => {
+const LoginPage = () => {
   const dispatch = useDispatch();
   const cookies = new Cookies();
   const navigate = useNavigate();
@@ -56,9 +56,9 @@ const RegisterPage = () => {
   const login = async (payload) => {
     console.log('sending request',payload);
     changeLoadingState(true);
-    let url = `${process.env.REACT_APP_BACKEND}/api/v1/student/signin`
+    let url = `${process.env.REACT_APP_BACKEND}/api/v1/user/signin`
     if (isAdmin) {
-      url = url.replace('student','admin');
+      url = url.replace('user','admin');
     }
     const data = await axios({
       method: "POST",
@@ -112,7 +112,7 @@ const RegisterPage = () => {
     <div id='register-container'>
       <div id='register-card' style={style}>
         <Card style={{ width: '40rem' }} id='register-bootstrap-card'>
-          {!isAdmin && <h3 id='register-heading'>Student Login</h3>}
+          {!isAdmin && <h3 id='register-heading'>User Login</h3>}
           {isAdmin && <h3 id='register-heading'>Admin Login</h3>}
           <Form onSubmit={submitHandler}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -144,4 +144,4 @@ const RegisterPage = () => {
   )
 }
 
-export default RegisterPage
+export default LoginPage
